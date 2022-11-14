@@ -1,3 +1,5 @@
+require "./src/processor"
+
 def present_options
   puts "Welcome to the Catalogue! 
   
@@ -12,15 +14,12 @@ def present_options
 end
 
 def main
-  present_options
-  option = gets.chomp.to_i
-  if (option == 1)
-    puts "List Items 
-  1. Books
-  2. Music albums
-  3. Movies
-  4. Games"
+  shutdown = false
+  while (!shutdown)
+    present_options
     option = gets.chomp.to_i
+    # handle option
+    shutdown = main_processor(option)
   end
 
   puts "Thank you for using the Catalogue!"
