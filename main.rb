@@ -3,6 +3,7 @@ require "./src/processor"
 def present_options
   puts "Welcome to the Catalogue! 
   
+  
   Choose an option: 
   
   1. List Items
