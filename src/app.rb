@@ -21,9 +21,9 @@ class App
     when 4
       puts "Games"
     when 5
-      @store.get_labels.each do |label| 
-        pust "id: #{label["id"]} - Label title: #{label["title"]} - Label color: #{label["color"]}"
-      endب
+      @store.get_labels.each do |label|
+        puts "id: #{label["id"]} - Label title: #{label["title"]} - Label color: #{label["color"]}"
+      end
     else
       puts "Invalid option"
     end
@@ -55,7 +55,7 @@ class App
       when 5
         puts "Add a new Game"
       when 6
-        puts "Add a new Label"
+        add_label(@store)
       else
         puts "Invalid option"
       end

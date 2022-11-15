@@ -3,8 +3,6 @@ require_relative "Book"
 require_relative "label"
 
 def add_book(store)
-  print "Enter the title of the book :"
-  title = gets.chomp
   print "Enter the author of the book :"
   author = gets.chomp
   print "Enter the publisher of the book :"
@@ -13,7 +11,8 @@ def add_book(store)
   date = gets.chomp
   print "Enter the cover state of the book :"
   cover_state = gets.chomp
-  book = Book.new(title, author, publisher, date, cover_state)
+  book = Book.new(publisher, date, cover_state)
+  book.author = author
   store.add_book(book)
   puts "Book added successfully"
 end

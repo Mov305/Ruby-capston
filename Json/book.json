@@ -19,5 +19,12 @@
     "publish_date": "2001-01-01 00:00:00 +0200",
     "cover_state": "not bad",
     "genre": "N/A"
+  },
+  {
+    "id": 232,
+    "publisher": "this is the name of the publisher",
+    "publish_date": "this is the name of the date",
+    "cover_state": "this is jsut a test",
+    "genre": "N/A"
   }
 ]
