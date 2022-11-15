@@ -26,5 +26,4 @@ def main
 
   puts 'Thank you for using the Catalogue!'
 end
-
 main
