@@ -18,6 +18,10 @@ class Item
     @archived = true if can_be_archived?
   end
 
+  def add_genre(genre)
+    @genre = genre
+  end
+
   attr_accessor :id, :genre, :author, :source, :label, :archived
   attr_reader :publish_date
 end
