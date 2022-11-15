@@ -1,7 +1,7 @@
 class Item
-  def initialize(date)
+  def initialize(date, id = Random.rand(1000))
     @publish_date = date
-    @id = Random.rand(1000)
+    @id = id
     @genre = "N/A"
     @author = "N/A"
     @sorce = "N/A"
