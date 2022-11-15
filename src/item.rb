@@ -2,10 +2,10 @@ class Item
   def initialize(date)
     @publish_date = date
     @id = Random.rand(1000)
-    @genre = "N/A"
-    @author = "N/A"
-    @sorce = "N/A"
-    @label = "N/A"
+    @genre = 'N/A'
+    @author = 'N/A'
+    @sorce = 'N/A'
+    @label = 'N/A'
     @archived = false
   end
 
@@ -16,6 +16,10 @@ class Item
 
   def move_to_archive
     @archived = true if can_be_archived?
+  end
+
+  def add_genre(genre)
+    @genre = genre
   end
 
   attr_accessor :id, :genre, :author, :source, :label, :archived
