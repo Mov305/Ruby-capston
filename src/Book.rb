@@ -12,7 +12,7 @@ class Book < Item
     @cover_state == "bad" or super
   end
 
-  def map_book
+  def map_item
     {
       id: @id,
       publisher: @publisher,

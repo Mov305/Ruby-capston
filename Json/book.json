@@ -1,0 +1,23 @@
+[
+  {
+    "id": 422,
+    "publisher": "Publisher",
+    "publish_date": "2001-01-01 00:00:00 +0200",
+    "cover_state": "not bad",
+    "genre": "N/A"
+  },
+  {
+    "id": 982,
+    "publisher": "Publisher",
+    "publish_date": "2001-01-01 00:00:00 +0200",
+    "cover_state": "not bad",
+    "genre": "N/A"
+  },
+  {
+    "id": 540,
+    "publisher": "Publisher",
+    "publish_date": "2001-01-01 00:00:00 +0200",
+    "cover_state": "not bad",
+    "genre": "N/A"
+  }
+]

@@ -11,7 +11,7 @@ class Label
     item.label = self
   end
 
-  def map_label
+  def map_item
     {
       id: @id,
       title: @title,
