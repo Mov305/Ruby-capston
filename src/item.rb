@@ -1,7 +1,7 @@
 class Item
-  def initialize(date)
+  def initialize(date, id = Random.rand(1000))
     @publish_date = date
-    @id = Random.rand(1000)
+    @id = id
     @genre = "N/A"
     @author = "N/A"
     @sorce = "N/A"
@@ -25,3 +25,5 @@ end
 # newItem = Item.new(Time.new(2021, 1, 1))
 # puts newItem.can_be_archived?
 # newItem.move_to_archive
+# newItem.author = "Author"
+# p newItem.inspect
