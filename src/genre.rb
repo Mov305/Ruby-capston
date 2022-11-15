@@ -1,4 +1,6 @@
-class Genre
+require_relative './item'
+
+class Genre < Item
   attr_accessor :name, :items
   attr_reader :id
 
