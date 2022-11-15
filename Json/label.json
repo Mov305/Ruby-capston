@@ -1,0 +1,32 @@
+[
+  {
+    "id": 735,
+    "title": "Title",
+    "color": "red",
+    "items": [
+      {
+        "id": 540,
+        "publisher": "Publisher",
+        "publish_date": "2001-01-01 00:00:00 +0200",
+        "cover_state": "not bad",
+        "genre": "N/A"
+      }
+    ]
+  },
+  {
+    "id": 840,
+    "title": "nono",
+    "color": "loca",
+    "items": [
+
+    ]
+  },
+  {
+    "id": 449,
+    "title": "label 1",
+    "color": "book 1",
+    "items": [
+
+    ]
+  }
+]
