@@ -1,7 +1,7 @@
 require "json"
 
 class FileWriter
-  def initialize(file_content, filename, path: './data/')
+  def initialize(file_content, filename, path: './Json/')
     @file_content = file_content
     @data = path + filename
   end

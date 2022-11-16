@@ -1,7 +1,7 @@
 require "json"
 
 class FileReader
-  def initialize(filename, path: './data/')
+  def initialize(filename, path: './Json/')
     @data = path + filename
   end
 
