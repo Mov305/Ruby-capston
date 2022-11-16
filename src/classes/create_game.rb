@@ -6,3 +6,7 @@ class CreateGame
     print('Enter the game name: ')
     gets.chomp
   end
+  def author_getter
+    print('Enter the author: ')
+    gets.chomp
+  end
