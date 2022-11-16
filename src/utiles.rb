@@ -3,6 +3,7 @@ require_relative 'Book'
 require_relative 'label'
 require_relative 'date_validation'
 require_relative 'music_album'
+require_relative 'genre'
 
 def add_book(store)
   print 'Enter the author of the book :'
@@ -67,4 +68,13 @@ def on_spotify_prompt
     break
   end
   on_spotify
+end
+
+
+def add_genre(store)
+  puts 'Please enter the genre of the music album: '
+  name = gets.chomp
+  genre = Genre.new(name)
+  store.add_genre(genre)
+  puts "Genre: \"#{genre.name}\" was added successfully"
 end

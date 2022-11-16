@@ -10,7 +10,8 @@ def present_options
   4. Add a new Movie
   5. Add a new Game
   6. Add a new Label
-  7. Exit"
+  7. Add a new Genre
+  8. Exit"
 end
 
 class Main
@@ -25,7 +26,7 @@ class Main
       present_options
       option = gets.chomp.to_i
       # handle option
-      if option.between?(1, 7)
+      if option.between?(1, 8)
         shutdown = @app.main_processor(option)
       else
         puts 'Invalid option'

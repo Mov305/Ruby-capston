@@ -1,12 +1,14 @@
 require 'json'
 require_relative 'Book'
 require_relative 'label'
+require_relative 'genre'
 
 class Store
   def initialize
     @books = []
     @labels = []
     @music = []
+    @genre = []
   end
 
   # rubocop:disable Naming/AccessorMethodName
@@ -46,7 +48,7 @@ class Store
     json_arr = []
     json_arr = JSON.parse(File.read('Json/music.json')) if File.exist?('Json/music.json')
     json_arr.push(music.map_item)
-    @labels = json_arr
+    @music = json_arr
     file = File.open('Json/music.json', 'w')
     file.write(JSON.pretty_generate(json_arr))
     file.close
@@ -57,6 +59,17 @@ class Store
     json_arr = JSON.parse(File.read('Json/music.json')) if File.exist?('Json/music.json')
     json_arr
   end
+
+  def add_genre(genre)
+    json_arr = []
+    json_arr = JSON.parse(File.read('Json/genre.json')) if File.exist?('Json/genre.json')
+    json_arr.push(genre.map_item)
+    @genre = json_arr
+    file = File.open('Json/genre.json', 'w')
+    file.write(JSON.pretty_generate(json_arr))
+    file.close
+  end
+
 end
 # rubocop:enable Naming/AccessorMethodName
 

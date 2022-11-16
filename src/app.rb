@@ -41,11 +41,12 @@ class App
     3. Movies
     4. Games
     5. Labels"
+    
 
       sub_option = gets.chomp.to_i
       # handle option
       sub_processor(sub_option)
-    when 7
+    when 8
       return true
     else
       # handle the other options
@@ -60,8 +61,10 @@ class App
         puts 'Add a new Game'
       when 6
         add_label(@store)
+      when 7
+        add_genre(@store)
       else
-        puts 'Invalid option'
+        puts 'Invalid option!'
       end
     end
     false
