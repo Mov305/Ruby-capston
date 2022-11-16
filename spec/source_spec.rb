@@ -1,4 +1,4 @@
-require_relative "../src/source"
+require_relative '../src/source'
 
 describe Source do
   context 'When instantiated' do

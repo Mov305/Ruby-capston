@@ -1,6 +1,6 @@
-require_relative "../source"
-require_relative "../file_writer"
-require_relative "../file_reader"
+require_relative '../source'
+require_relative '../file_writer'
+require_relative '../file_reader'
 
 def write_sources(sources)
   data = []

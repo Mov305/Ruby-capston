@@ -1,4 +1,4 @@
-require "json"
+require 'json'
 
 class FileWriter
   def initialize(file_content, filename, path: './Json/')

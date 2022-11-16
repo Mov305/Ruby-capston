@@ -1,6 +1,6 @@
-require_relative "../movie"
-require_relative "../file_writer"
-require_relative "../file_reader"
+require_relative '../movie'
+require_relative '../file_writer'
+require_relative '../file_reader'
 
 def write_movies(movies)
   data = []

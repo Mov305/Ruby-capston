@@ -2,10 +2,10 @@ class Item
   def initialize(date, id = Random.rand(1000))
     @publish_date = date
     @id = id
-    @genre = "N/A"
-    @author = "N/A"
-    @source = "N/A"
-    @label = "N/A"
+    @genre = 'N/A'
+    @author = 'N/A'
+    @source = 'N/A'
+    @label = 'N/A'
     @archived = false
   end
 
