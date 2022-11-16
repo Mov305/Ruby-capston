@@ -1,5 +1,6 @@
 require_relative "utiles"
 require_relative "storage"
+require_relative "movie"
 
 class App
   def initialize
@@ -63,3 +64,4 @@ class App
     false
   end
 end
+

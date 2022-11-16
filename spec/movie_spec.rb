@@ -1,6 +1,6 @@
-require_relative '../src/item'
-require_relative '../src/movie'
-require 'date'
+require_relative "../src/item"
+require_relative "../src/movie"
+require "date"
 
 describe Movie do
   before(:each) do
