@@ -28,3 +28,15 @@ CREATE TABLE books_labels (
     FOREIGN KEY (book_id) REFERENCES books(id),
     FOREIGN KEY (label_id) REFERENCES labels(id)
 );
+
+CREATE TABLE source (
+  id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+  name VARCHAR(200)
+);
+
+CREATE TABLE movie (
+  id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+  silent BOOLEAN,
+  publish_date DATE,
+  archived BOOLEAN
+);
