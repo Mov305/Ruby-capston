@@ -25,3 +25,12 @@ class CreateGame
     print('Enter the publish date (YYYY-MM-DD): ')
     gets.chomp
   end  
+  def create_game(games)
+    game = Game.new(publish_date, multiplayer, play_date, name_getter)
+    author = Author.new(author_getter)
+    game.add_author(author)
+    games << game
+    puts 'Game created successfully.'
+    puts ' '
+  end
+end
