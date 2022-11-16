@@ -4,7 +4,7 @@ class Item
     @id = id
     @genre = "N/A"
     @author = "N/A"
-    @sorce = "N/A"
+    @source = "N/A"
     @label = "N/A"
     @archived = false
   end
