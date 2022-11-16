@@ -1,5 +1,5 @@
 class Item
-  def initialize(date, id = Random.rand(1000))
+  def initialize(date, id = Random.rand(1000), archived: false)
     @publish_date = date
     @id = id
     @genre = "N/A"

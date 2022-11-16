@@ -6,6 +6,7 @@ class Store
   def initialize
     @books = []
     @labels = []
+    @music = []
   end
 
   def add_book(book)
@@ -39,6 +40,26 @@ class Store
     jsonArr = JSON.parse(File.read("Json/label.json")) if File.exist?("Json/label.json")
     jsonArr
   end
+
+
+  def add_music(music)
+    jsonArr = []
+    jsonArr = JSON.parse(File.read("Json/music.json")) if File.exist?("Json/music.json")
+    jsonArr.push(music.map_item)
+    @labels = jsonArr
+    file = File.open("Json/music.json", "w")
+    file.write(JSON.pretty_generate(jsonArr))
+    file.close
+  end
+
+  def get_music
+    jsonArr = []
+    jsonArr = JSON.parse(File.read("Json/music.json")) if File.exist?("Json/music.json")
+    jsonArr
+  end
+
+
+
 end
 
 # newItem = Book.new("Publisher", Time.new(2001, 1, 1), "not bad")
