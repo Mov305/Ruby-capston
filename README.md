@@ -50,6 +50,12 @@ Follow all steps to install [_Ruby_](https://rubyinstaller.org/)
 - Twitter: [@Mov305](https://twitter.com/Mov_abd)
 - LinkedIn: [@Mov305](https://www.linkedin.com/in/abdelrhman-samy-80b14b215/)
 
+👤 **Oluyemi Paul**
+
+- GitHub: [@Ol-create](https://www.github.com/Ol-create)
+- Twitter: [@OluyemiPaul99](https://twitter.com/OluyemiPaul99)
+- LinkedIn: [@paul-oluyemi](https://linkedin.com/in/paul-oluyemi)
+
 
 
 ## Acknowledgements ⭐️
