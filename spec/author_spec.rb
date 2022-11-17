@@ -1,4 +1,4 @@
-require './Classes/game_author'
+require './src/classes/game_author'
 
 describe Author do
   let(:author) { Author.new('Stephen') }

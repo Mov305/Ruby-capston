@@ -1,5 +1,5 @@
-require_relative '../Classes/game'
-require_relative '../Classes/item'
+require './src/classes/game'
+require './src/classes/item'
 
 RSpec.describe Game do
   it 'should be a game' do
