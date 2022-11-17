@@ -52,7 +52,7 @@ Follow all steps to install [_Ruby_](https://rubyinstaller.org/)
 - Twitter: [@Mov305](https://twitter.com/Mov_abd)
 - LinkedIn: [@Mov305](https://www.linkedin.com/in/abdelrhman-samy-80b14b215/)
 
-## Author2
+👤 **Ogiogio Victor**
 
 - GitHub: [@githubhandle](https://github.com/ogiogiovictor)
 - Twitter: [@twitterhandle](https://twitter.com/Vikky_Vick)
