@@ -1,5 +1,6 @@
 require_relative 'utiles'
 require_relative 'storage'
+require_relative 'movie'
 
 class App
   def initialize
@@ -64,7 +65,7 @@ class App
       when 7
         add_genre(@store)
       else
-        puts 'Invalid option!'
+        puts 'Invalid option'
       end
     end
     false

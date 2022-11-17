@@ -3,6 +3,7 @@ require_relative 'Book'
 require_relative 'label'
 require_relative 'genre'
 
+
 class Store
   def initialize
     @books = []
@@ -33,15 +34,15 @@ class Store
   end
 
   def get_books
-    json_arr = []
-    json_arr = JSON.parse(File.read('Json/book.json')) if File.exist?('Json/book.json')
-    json_arr
+    jsonArr = []
+    jsonArr = JSON.parse(File.read('Json/book.json')) if File.exist?('Json/book.json')
+    jsonArr
   end
-
+  
   def get_labels
-    json_arr = []
-    json_arr = JSON.parse(File.read('Json/label.json')) if File.exist?('Json/label.json')
-    json_arr
+    jsonArr = []
+    jsonArr = JSON.parse(File.read('Json/label.json')) if File.exist?('Json/label.json')
+    jsonArr
   end
 
   def add_music(music)

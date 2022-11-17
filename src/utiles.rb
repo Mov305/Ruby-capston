@@ -5,6 +5,7 @@ require_relative 'date_validation'
 require_relative 'music_album'
 require_relative 'genre'
 
+
 def add_book(store)
   print 'Enter the author of the book :'
   author = gets.chomp
