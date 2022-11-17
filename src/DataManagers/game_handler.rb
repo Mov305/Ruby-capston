@@ -1,20 +1,5 @@
-# module GamesData
-#   def create_game(game)
-#     File.write('games.json', JSON.pretty_generate(game))
-#   end
-
-#   def read_game
-#     if File.exist?('games.json')
-#       file = File.open ',/games.json'
-#       data = JSON.parse file.read
-#       file.close
-#     end
-#     data
-#   end
-# end
-
 require 'json'
-require_relative '../Classes/game'
+require_relative '../classes/game'
 
 module GamesData
   def load_games
