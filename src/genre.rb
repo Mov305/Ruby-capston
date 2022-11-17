@@ -2,21 +2,22 @@ class Genre
   attr_accessor :name
   attr_reader :id, :items
 
-  def initialize(name)
+  def initialize(name, id = Random.rand(1000))
     @name = name
-    @id = Random.rand(1000)
+    @id = id
     @items = []
   end
 
   def add_item(item)
     @items.push(item)
-   # @items.push(item) unless @items.include?(item)
-   # item.genre = self
+    item.genre = self
   end
 
   def map_item
     {
-      name: @name
+      id: @id,
+      name: @name,
+      items: @items.map { |item| item.map_item },
     }
   end
 end

@@ -1,14 +1,20 @@
-require_relative 'item'
+require_relative "item"
 
 class Movie < Item
   attr_accessor :silent
 
-  def initialize(silent, publish_date, archived)
-    super(publish_date, archived)
+  def initialize(silent, publish_date, id = Random.rand(1000))
+    super(publish_date, id)
     @silent = silent
   end
 
-  private
+  def map_item
+    {
+      silent: @silent,
+      publish_date: @publish_date,
+      archived: @archived,
+    }
+  end
 
   def can_be_archived?
     @silent || super
