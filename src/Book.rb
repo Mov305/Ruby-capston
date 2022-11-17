@@ -1,4 +1,4 @@
-require_relative 'item'
+require_relative "item"
 # require_relative "label"
 
 class Book < Item
@@ -9,7 +9,7 @@ class Book < Item
   end
 
   def can_be_archived?
-    @cover_state == 'bad' or super
+    @cover_state == "bad" or super
   end
 
   def map_item
@@ -18,7 +18,7 @@ class Book < Item
       publisher: @publisher,
       publish_date: @publish_date,
       cover_state: @cover_state,
-      genre: @genre
+      label: @label,
     }
   end
 
@@ -27,7 +27,7 @@ end
 
 # newItem = Book.new("Publisher", Time.new(2001, 1, 1), "not bad")
 # puts newItem.can_be_archived?
-# p newItem.map_book
+# p newItem.map_item
 # lab = Label.new("Title", "red")
 # lab.add_item(newItem)
 # p lab.inspect

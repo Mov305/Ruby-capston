@@ -1,6 +1,17 @@
-# require './Menus/music_menu'
-# require './Menus/book_menu'
-require './src/Menus/game_menu'
+
+require "./src/app"
+
+def present_options
+  puts "
+  Choose an option:
+
+  1. List Items
+  2. Add a new Book
+  3. Add a new Music album
+  4. Add a new Movie
+  5. Add a new Game
+  6. Exit"
+end
 
 class Main
   def initialize
@@ -16,21 +27,21 @@ class Main
   end
 
   def run
-    while @status
-      @welcome_message.each { |i| puts i }
-      option = gets.chomp
-
-      case option
-      # when '1' then BookMenu.new.run
-      # when '2' then MusicMenu.new.run
-      when '3' then GameMenu.new.run
-      when '4'
-        puts "Thank you for using the Catalogue!\n "
-        @status = false
+    puts "Welcome to the Catalog App!"
+    shutdown = false
+    until shutdown
+      present_options
+      option = gets.chomp.to_i
+      # handle option
+      if option.between?(1, 8)
+        shutdown = @app.main_processor(option)
       else
-        puts "Sorry, you choose a wrong option\n "
+        puts "Invalid option"
       end
     end
+
+
+    puts "Thank you for using the Catalogue!"
   end
 end
 

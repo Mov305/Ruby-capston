@@ -1,8 +1,8 @@
 class Source
   attr_accessor :name
 
-  def initialize(name)
-    @id = Random.rand(1..1100)
+  def initialize(name, id = Random.rand(1000))
+    @id = id
     @name = name
     @items = []
   end
@@ -12,7 +12,13 @@ class Source
     item.source = self
   end
 
-  private
+  def map_item
+    {
+      id: @id,
+      name: @name,
+      items: @items.map { |item| item.map_item },
+    }
+  end
 
   attr_reader :id, :items
 end

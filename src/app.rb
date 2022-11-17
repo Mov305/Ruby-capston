@@ -1,32 +1,32 @@
-require_relative 'utiles'
-require_relative 'storage'
-require_relative 'movie'
+require_relative "storage"
+require_relative "actions/utiles_helper"
 
 class App
   def initialize
     @store = Store.new
-    @books_list = @store.get_books
-    @labels_list = @store.get_labels
+    @B_utiles = BookUtiles.new(@store)
+    @M_utiles = MusicUtiles.new(@store)
+    @Movies_utiles = MovieUtiles.new(@store)
   end
 
   def sub_processor(option)
     case option
     when 1
-      @store.get_books.each do |book|
-        puts "Id: #{book['id']} Book title: #{book['title']} - Book author: #{book['author']} - Book publisher: #{book['publisher']} - Book date: #{book['date']} - Book cover state: #{book['cover_state']}"
+      @store.books.each do |book|
+        puts "id: #{book.id}, Publisher: #{book.publisher}, Publish Date: #{book.publish_date}, Cover State: #{book.cover_state}, label: #{book.label}"
       end
     when 2
-      puts 'Music albums'
-    when 3
-      puts 'Movies'
-    when 4
-      puts 'Games'
-    when 5
-      @store.get_labels.each do |label|
-        puts "id: #{label['id']} - Label title: #{label['title']} - Label color: #{label['color']}"
+      @store.musics.each do |music|
+        puts "Title: #{music.title}, Publish Date: #{music.publish_date}, on Spotify: #{music.on_spotify}, genre: #{music.genre}"
       end
+    when 3
+      @store.movies.each do |movie|
+        puts "Silent: #{movie.silent}, Publish Date: #{movie.publish_date}, source: #{movie.source}"
+      end
+    when 4
+      puts "Games"
     else
-      puts 'Invalid option'
+      puts "Invalid option"
     end
   end
 
@@ -37,30 +37,24 @@ class App
     1. Books
     2. Music albums
     3. Movies
-    4. Games
-    5. Labels"
+    4. Games"
 
       sub_option = gets.chomp.to_i
       # handle option
       sub_processor(sub_option)
-    when 7
+    when 2
+      @B_utiles.add_book
+    when 3
+      @M_utiles.add_music_album
+    when 4
+      @Movies_utiles.add_movie
+    when 5
+      puts "Add a new Game"
+    when 6
+      @store.save_data
       return true
     else
-      # handle the other options
-      case option
-      when 2
-        add_book(@store)
-      when 3
-        puts 'Add a new Music album'
-      when 4
-        puts 'Add a new Movie'
-      when 5
-        puts 'Add a new Game'
-      when 6
-        add_label(@store)
-      else
-        puts 'Invalid option'
-      end
+      puts "Invalid option"
     end
     false
   end
