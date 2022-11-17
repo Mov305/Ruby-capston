@@ -1,6 +1,6 @@
 class Genre
-  attr_accessor :name, :items
-  attr_reader :id
+  attr_accessor :name
+  attr_reader :id, :items
 
   def initialize(name)
     @name = name
@@ -9,7 +9,14 @@ class Genre
   end
 
   def add_item(item)
-    # add item to the genre
     @items.push(item)
+   # @items.push(item) unless @items.include?(item)
+   # item.genre = self
+  end
+
+  def map_item
+    {
+      name: @name
+    }
   end
 end

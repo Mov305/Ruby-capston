@@ -7,6 +7,7 @@ class App
     @store = Store.new
     @books_list = @store.get_books
     @labels_list = @store.get_labels
+    @music_album = @store.get_music
   end
 
   def sub_processor(option)
@@ -16,7 +17,9 @@ class App
         puts "Id: #{book['id']} Book title: #{book['title']} - Book author: #{book['author']} - Book publisher: #{book['publisher']} - Book date: #{book['date']} - Book cover state: #{book['cover_state']}"
       end
     when 2
-      puts 'Music albums'
+      @store.get_music.each do |music|
+        puts "Title: #{music['title']} - Spotify: #{music['on_spotify']} - Published Date: #{music['publish_date']}"
+      end
     when 3
       puts 'Movies'
     when 4
@@ -39,11 +42,12 @@ class App
     3. Movies
     4. Games
     5. Labels"
+    
 
       sub_option = gets.chomp.to_i
       # handle option
       sub_processor(sub_option)
-    when 7
+    when 8
       return true
     else
       # handle the other options
@@ -51,13 +55,15 @@ class App
       when 2
         add_book(@store)
       when 3
-        puts 'Add a new Music album'
+        add_music(@store)
       when 4
         puts 'Add a new Movie'
       when 5
         puts 'Add a new Game'
       when 6
         add_label(@store)
+      when 7
+        add_genre(@store)
       else
         puts 'Invalid option'
       end
