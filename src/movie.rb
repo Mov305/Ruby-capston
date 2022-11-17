@@ -10,9 +10,9 @@ class Movie < Item
 
   def map_item
     {
+      id: @id,
       silent: @silent,
       publish_date: @publish_date,
-      archived: @archived,
     }
   end
 

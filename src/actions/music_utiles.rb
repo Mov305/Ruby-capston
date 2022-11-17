@@ -9,13 +9,13 @@ class MusicUtiles
   def add_music_album
     print "Enter the title of the music album :"
     title = gets.chomp
-    print "Enter the publish date of the music album :"
-    publish_date = gets.chomp
+    print "Enter the publish date of the music album (yyyy-mm-dd) :"
+    publish_date = gets.chomp.split("-").map(&:to_i)
     print "Is the music album on spotify? (y/n) :"
     on_spotify = gets.chomp.downcase == "Yes" ? true : false
     print "Do you want to create a new genre to this music album? (y/n) :"
     answer = gets.chomp.downcase
-    music_album = MusicAlbum.new(publish_date, on_spotify, title)
+    music_album = MusicAlbum.new(Time.new(publish_date[0], publish_date[1], publish_date[2]), on_spotify, title)
     if answer == "y" || @store.genres.length == 0
       if @store.genres.length == 0
         puts "There are no genres yet please create one"

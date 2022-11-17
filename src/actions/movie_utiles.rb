@@ -10,8 +10,8 @@ class MovieUtiles
     print "Is the movie silent? (y/n) :"
     silent = gets.chomp.downcase == "y" ? true : false
     print "Enter the publish date of the movie :"
-    publish_date = gets.chomp
-    movie = Movie.new(silent, publish_date)
+    publish_date = gets.chomp.split("-").map(&:to_i)
+    movie = Movie.new(silent, Time.new(publish_date[0], publish_date[1], publish_date[2]))
     print "Do you want to create a new source to this movie? (y/n) :"
     answer = gets.chomp.downcase
     if answer == "y" || @store.sources.length == 0

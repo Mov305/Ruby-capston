@@ -12,10 +12,10 @@ class BookUtiles
     print "Enter the publisher of the book :"
     publisher = gets.chomp
     print "Enter the date of the book :"
-    date = gets.chomp
+    date = gets.chomp.split("-").map(&:to_i)
     print "Enter the cover state of the book :"
     cover_state = gets.chomp
-    book = Book.new(publisher, date, cover_state)
+    book = Book.new(publisher, Time.new(date[0], date[1], date[2]), cover_state)
     book.author = author
     print "Do you want to create a label to this book? (y/n)"
     answer = gets.chomp.downcase

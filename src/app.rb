@@ -7,6 +7,7 @@ class App
     @B_utiles = BookUtiles.new(@store)
     @M_utiles = MusicUtiles.new(@store)
     @Movies_utiles = MovieUtiles.new(@store)
+    @G_utiles = GameUtiles.new(@store)
   end
 
   def sub_processor(option)
@@ -24,7 +25,9 @@ class App
         puts "Silent: #{movie.silent}, Publish Date: #{movie.publish_date}, source: #{movie.source}"
       end
     when 4
-      puts "Games"
+      @store.games.each do |game|
+        puts "Mutiplayer: #{game.mutiplayer}, Last Played At: #{game.last_played_at}, Author: #{game.author}"
+      end
     else
       puts "Invalid option"
     end
@@ -49,7 +52,7 @@ class App
     when 4
       @Movies_utiles.add_movie
     when 5
-      puts "Add a new Game"
+      @G_utiles.add_game
     when 6
       @store.save_data
       return true
