@@ -13,7 +13,7 @@ class Author
       id: @id,
       first_name: @first_name,
       last_name: @last_name,
-      items: @items.map { |item| item.map_item }
+      items: @items.map(&:map_item)
     }
   end
 

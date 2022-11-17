@@ -19,8 +19,8 @@ class BookUtiles
     book.author = author
     print 'Do you want to create a label to this book? (y/n)'
     answer = gets.chomp.downcase
-    if answer == 'y' || @store.labels.length == 0
-      puts 'There are no labels yet please create one' if @store.labels.length == 0
+    if answer == 'y' || @store.labels.length.zero?
+      puts 'There are no labels yet please create one' if @store.labels.length.zero?
       lab = create_label
       lab.add_item(book)
       @store.add_label(lab)

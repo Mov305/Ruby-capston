@@ -122,14 +122,14 @@ class Store
   end
 
   def save_data
-    File.write('Json/book.json', JSON.pretty_generate(@books.map { |book| book.map_item }))
-    File.write('Json/label.json', JSON.pretty_generate(@labels.map { |label| label.map_item }))
-    File.write('Json/music.json', JSON.pretty_generate(@musics.map { |music| music.map_item }))
-    File.write('Json/genre.json', JSON.pretty_generate(@genres.map { |genre| genre.map_item }))
-    File.write('Json/movie.json', JSON.pretty_generate(@movies.map { |movie| movie.map_item }))
-    File.write('Json/source.json', JSON.pretty_generate(@sources.map { |source| source.map_item }))
-    File.write('Json/game.json', JSON.pretty_generate(@games.map { |game| game.map_item }))
-    File.write('Json/author.json', JSON.pretty_generate(@authors.map { |author| author.map_item }))
+    File.write('Json/book.json', JSON.pretty_generate(@books.map(&:map_item)))
+    File.write('Json/label.json', JSON.pretty_generate(@labels.map(&:map_item)))
+    File.write('Json/music.json', JSON.pretty_generate(@musics.map(&:map_item)))
+    File.write('Json/genre.json', JSON.pretty_generate(@genres.map(&:map_item)))
+    File.write('Json/movie.json', JSON.pretty_generate(@movies.map(&:map_item)))
+    File.write('Json/source.json', JSON.pretty_generate(@sources.map(&:map_item)))
+    File.write('Json/game.json', JSON.pretty_generate(@games.map(&:map_item)))
+    File.write('Json/author.json', JSON.pretty_generate(@authors.map(&:map_item)))
   end
 
   attr_reader :books, :labels, :musics, :genres, :movies, :sources, :games, :authors

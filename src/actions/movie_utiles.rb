@@ -14,8 +14,8 @@ class MovieUtiles
     movie = Movie.new(silent, Time.new(publish_date[0], publish_date[1], publish_date[2]))
     print 'Do you want to create a new source to this movie? (y/n) :'
     answer = gets.chomp.downcase
-    if answer == 'y' || @store.sources.length == 0
-      puts 'There are no sources yet please create one' if @store.sources.length == 0
+    if answer == 'y' || @store.sources.length.zero?
+      puts 'There are no sources yet please create one' if @store.sources.length.zero?
       source = create_source
       source.add_item(movie)
       @store.add_source(source)

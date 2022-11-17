@@ -16,8 +16,8 @@ class MusicUtiles
     print 'Do you want to create a new genre to this music album? (y/n) :'
     answer = gets.chomp.downcase
     music_album = MusicAlbum.new(Time.new(publish_date[0], publish_date[1], publish_date[2]), on_spotify, title)
-    if answer == 'y' || @store.genres.length == 0
-      puts 'There are no genres yet please create one' if @store.genres.length == 0
+    if answer == 'y' || @store.genres.length.zero?
+      puts 'There are no genres yet please create one' if @store.genres.length.zero?
       genre = create_genre
       genre.add_item(music_album)
       @store.add_genre(genre)

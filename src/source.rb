@@ -16,7 +16,7 @@ class Source
     {
       id: @id,
       name: @name,
-      items: @items.map { |item| item.map_item }
+      items: @items.map(&:map_item)
     }
   end
 
