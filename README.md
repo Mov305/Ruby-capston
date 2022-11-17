@@ -4,6 +4,8 @@
 
 > This is a Ruby Capstone Project. The project is about building a command-line application that helps to manage a library. The application allows users to add books, authors, and genres to the library. Users can also list all books, authors, and genres in the library. The application also allows users to list all books by a specific author or genre.
 
+[Link for presentation](https://drive.google.com/file/d/12eRAhOSMyqIQRY9jOxehz_Q9dsMz_9N4/view?usp=share_link
+)
 
 
 ## Built With
