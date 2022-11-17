@@ -61,3 +61,13 @@ CREATE TABLE movie (
   publish_date DATE,
   archived BOOLEAN
 );
+
+-- Game Table
+CREATE TABLE game (
+  id integer REFERENCES item(id),
+  multiplayer boolean,
+  last_played_at date,
+  publish_date date,
+  author_id int,
+  gamename text
+);
