@@ -1,4 +1,4 @@
-require "./src/app"
+require './src/app'
 
 def present_options
   puts "
@@ -18,7 +18,7 @@ class Main
   end
 
   def run
-    puts "Welcome to the Catalog App!"
+    puts 'Welcome to the Catalog App!'
     shutdown = false
     until shutdown
       present_options
@@ -27,12 +27,12 @@ class Main
       if option.between?(1, 8)
         shutdown = @app.main_processor(option)
       else
-        puts "Invalid option"
+        puts 'Invalid option'
       end
       sleep(0.5)
     end
 
-    puts "Thank you for using the Catalogue!"
+    puts 'Thank you for using the Catalogue!'
   end
 end
 

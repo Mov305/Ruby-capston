@@ -1,4 +1,4 @@
-require_relative "item"
+require_relative 'item'
 
 class Movie < Item
   attr_accessor :silent
@@ -12,7 +12,7 @@ class Movie < Item
     {
       id: @id,
       silent: @silent,
-      publish_date: @publish_date,
+      publish_date: @publish_date
     }
   end
 

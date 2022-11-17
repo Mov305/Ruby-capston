@@ -1,4 +1,4 @@
-require_relative "item"
+require_relative 'item'
 
 # Create Game class
 class Game < Item
@@ -13,7 +13,7 @@ class Game < Item
       id: @id,
       multiplayer: @multiplayer,
       last_played_at: @last_played_at,
-      archived: @archived,
+      archived: @archived
     }
   end
 

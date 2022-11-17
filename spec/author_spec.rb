@@ -1,4 +1,4 @@
-require_relative "helper_spec"
+require_relative 'helper_spec'
 
 describe Author do
   let(:author) { Author.new('Stephen') }

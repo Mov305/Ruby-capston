@@ -1,5 +1,5 @@
-require_relative "storage"
-require_relative "actions/utiles_helper"
+require_relative 'storage'
+require_relative 'actions/utiles_helper'
 
 class App
   def initialize
@@ -29,7 +29,7 @@ class App
         puts "Mutiplayer: #{game.mutiplayer}, Last Played At: #{game.last_played_at}, Author: #{game.author}"
       end
     else
-      puts "Invalid option"
+      puts 'Invalid option'
     end
   end
 
@@ -57,7 +57,7 @@ class App
       @store.save_data
       return true
     else
-      puts "Invalid option"
+      puts 'Invalid option'
     end
     false
   end

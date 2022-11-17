@@ -8,7 +8,7 @@ class Label
 
   def add_item(item)
     @items.push(item)
-    item.label = self.title
+    item.label = title
   end
 
   def map_item

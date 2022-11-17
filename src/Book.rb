@@ -1,4 +1,4 @@
-require_relative "item"
+require_relative 'item'
 # require_relative "label"
 
 class Book < Item
@@ -9,7 +9,7 @@ class Book < Item
   end
 
   def can_be_archived?
-    @cover_state == "bad" or super
+    @cover_state == 'bad' or super
   end
 
   def map_item
@@ -18,7 +18,7 @@ class Book < Item
       publisher: @publisher,
       publish_date: @publish_date,
       cover_state: @cover_state,
-      label: @label,
+      label: @label
     }
   end
 

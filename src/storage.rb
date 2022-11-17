@@ -1,26 +1,78 @@
-require "json"
-require_relative "Book"
-require_relative "label"
-require_relative "genre"
-require_relative "music_album"
-require_relative "movie"
-require_relative "source"
-require_relative "game"
-require_relative "author"
+require 'json'
+require_relative 'Book'
+require_relative 'label'
+require_relative 'genre'
+require_relative 'music_album'
+require_relative 'movie'
+require_relative 'source'
+require_relative 'game'
+require_relative 'author'
 
 class Store
   def initialize
-    @books = File.exist?("Json/book.json") ? JSON.parse(File.read("Json/book.json")).map { |book| Book.new(book["publisher"], book["publish_date"], book["cover_state"], book["id"]) } : []
-    @labels = File.exist?("Json/label.json") ? JSON.parse(File.read("Json/label.json")).map { |label| Label.new(label["title"], label["color"], label["id"]) } : []
-    @musics = File.exist?("Json/music.json") ? JSON.parse(File.read("Json/music.json")).map { |music| MusicAlbum.new(music["publish_date"], music["on_spotify"], music["title"], music["id"]) } : []
-    @genres = File.exist?("Json/genre.json") ? JSON.parse(File.read("Json/genre.json")).map { |genre| Genre.new(genre["name"], genre["id"]) } : []
-    @movies = File.exist?("Json/movie.json") ? JSON.parse(File.read("Json/movie.json")).map { |movie| Movie.new(movie["silent"], movie["publish_date"], movie["id"]) } : []
-    @sources = File.exist?("Json/source.json") ? JSON.parse(File.read("Json/source.json")).map { |source| Source.new(source["name"], source["id"]) } : []
-    @games = File.exist?("Json/game.json") ? JSON.parse(File.read("Json/game.json")).map { |game| Game.new(game["mutiplayer"], game["last_played_at"], game["id"]) } : []
-    @authors = File.exist?("Json/author.json") ? JSON.parse(File.read("Json/author.json")).map { |author| Author.new(author["first_name"], author["last_name"], author["id"]) } : []
+    @books = if File.exist?('Json/book.json')
+               JSON.parse(File.read('Json/book.json')).map do |book|
+                 Book.new(book['publisher'], book['publish_date'], book['cover_state'],
+                          book['id'])
+               end
+             else
+               []
+             end
+    @labels = if File.exist?('Json/label.json')
+                JSON.parse(File.read('Json/label.json')).map do |label|
+                  Label.new(label['title'], label['color'], label['id'])
+                end
+              else
+                []
+              end
+    @musics = if File.exist?('Json/music.json')
+                JSON.parse(File.read('Json/music.json')).map do |music|
+                  MusicAlbum.new(music['publish_date'], music['on_spotify'],
+                                 music['title'], music['id'])
+                end
+              else
+                []
+              end
+    @genres = if File.exist?('Json/genre.json')
+                JSON.parse(File.read('Json/genre.json')).map do |genre|
+                  Genre.new(genre['name'], genre['id'])
+                end
+              else
+                []
+              end
+    @movies = if File.exist?('Json/movie.json')
+                JSON.parse(File.read('Json/movie.json')).map do |movie|
+                  Movie.new(movie['silent'], movie['publish_date'],
+                            movie['id'])
+                end
+              else
+                []
+              end
+    @sources = if File.exist?('Json/source.json')
+                 JSON.parse(File.read('Json/source.json')).map do |source|
+                   Source.new(source['name'], source['id'])
+                 end
+               else
+                 []
+               end
+    @games = if File.exist?('Json/game.json')
+               JSON.parse(File.read('Json/game.json')).map do |game|
+                 Game.new(game['mutiplayer'], game['last_played_at'],
+                          game['id'])
+               end
+             else
+               []
+             end
+    @authors = if File.exist?('Json/author.json')
+                 JSON.parse(File.read('Json/author.json')).map do |author|
+                   Author.new(author['first_name'], author['last_name'],
+                              author['id'])
+                 end
+               else
+                 []
+               end
   end
 
-  # rubocop:disable Naming/AccessorMethodName
   def add_book(book)
     @books << book
   end
@@ -70,20 +122,18 @@ class Store
   end
 
   def save_data
-    File.write("Json/book.json", JSON.pretty_generate(@books.map { |book| book.map_item }))
-    File.write("Json/label.json", JSON.pretty_generate(@labels.map { |label| label.map_item }))
-    File.write("Json/music.json", JSON.pretty_generate(@musics.map { |music| music.map_item }))
-    File.write("Json/genre.json", JSON.pretty_generate(@genres.map { |genre| genre.map_item }))
-    File.write("Json/movie.json", JSON.pretty_generate(@movies.map { |movie| movie.map_item }))
-    File.write("Json/source.json", JSON.pretty_generate(@sources.map { |source| source.map_item }))
-    File.write("Json/game.json", JSON.pretty_generate(@games.map { |game| game.map_item }))
-    File.write("Json/author.json", JSON.pretty_generate(@authors.map { |author| author.map_item }))
+    File.write('Json/book.json', JSON.pretty_generate(@books.map { |book| book.map_item }))
+    File.write('Json/label.json', JSON.pretty_generate(@labels.map { |label| label.map_item }))
+    File.write('Json/music.json', JSON.pretty_generate(@musics.map { |music| music.map_item }))
+    File.write('Json/genre.json', JSON.pretty_generate(@genres.map { |genre| genre.map_item }))
+    File.write('Json/movie.json', JSON.pretty_generate(@movies.map { |movie| movie.map_item }))
+    File.write('Json/source.json', JSON.pretty_generate(@sources.map { |source| source.map_item }))
+    File.write('Json/game.json', JSON.pretty_generate(@games.map { |game| game.map_item }))
+    File.write('Json/author.json', JSON.pretty_generate(@authors.map { |author| author.map_item }))
   end
 
   attr_reader :books, :labels, :musics, :genres, :movies, :sources, :games, :authors
 end
-
-# rubocop:enable Naming/AccessorMethodName
 
 # newItem = Book.new("Publisher", Time.new(2001, 1, 1), "not bad")
 # store = Store.new

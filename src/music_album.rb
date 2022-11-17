@@ -1,4 +1,4 @@
-require_relative "./item"
+require_relative './item'
 
 class MusicAlbum < Item
   attr_accessor :on_spotify, :title
@@ -10,14 +10,14 @@ class MusicAlbum < Item
   end
 
   def can_be_archived?
-    super && @on_spotify == "Yes"
+    super && @on_spotify == 'Yes'
   end
 
   def map_item
     {
       publish_date: @publish_date,
       on_spotify: @on_spotify,
-      title: @title,
+      title: @title
     }
   end
 end
