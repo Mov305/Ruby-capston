@@ -1,3 +1,4 @@
+
 require "./src/app"
 
 def present_options
@@ -14,7 +15,15 @@ end
 
 class Main
   def initialize
-    @app = App.new
+    @status = true
+    @welcome_message = [
+      "Welcome to the catalog app!\n",
+      'Please choose an option by entering a number:',
+      '1 - Book Menu',
+      '2 - Music Menu',
+      '3 - Games Menu',
+      '4 - Exit'
+    ]
   end
 
   def run
@@ -29,8 +38,8 @@ class Main
       else
         puts "Invalid option"
       end
-      sleep(0.5)
     end
+
 
     puts "Thank you for using the Catalogue!"
   end
