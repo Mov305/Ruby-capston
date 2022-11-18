@@ -43,6 +43,9 @@ Follow all steps to install [_Ruby_](https://rubyinstaller.org/)
 
   - _Install dependencies locally_
     - bundle install
+    - then run the command `bundle install` to install all the dependencies
+  - _Run the application_
+    - run the command `ruby main.rb` to run the application
 
 
 ## Authors
