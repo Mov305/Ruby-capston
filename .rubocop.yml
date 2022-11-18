@@ -85,3 +85,6 @@ Naming/VariableName:
 
 Naming/FileName:
   Enabled: false
+
+Lint/NonAtomicFileOperation:
+  Enabled: false

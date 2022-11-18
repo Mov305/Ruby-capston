@@ -123,7 +123,7 @@ class Store
 
   def save_data
     # if Json folder doesn't exist, create it
-    FileUtils.mkdir_p('Json')
+    Dir.mkdir('Json') unless Dir.exist?('Json')
     # rubocop:disable Style/GuardClause
     if Dir.exist?('Json')
       # rubocop:enable Style/GuardClause
