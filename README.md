@@ -65,8 +65,10 @@ Follow all steps to install [_Ruby_](https://rubyinstaller.org/)
 - Twitter: [@OluyemiPaul99](https://twitter.com/OluyemiPaul99)
 - LinkedIn: [@paul-oluyemi](https://linkedin.com/in/paul-oluyemi)
 
+👤 **Matias Aguirre**
 
-
+- GitHub: [@LokurasRlz](https://github.com/LokurasRlz)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/)
 
 ## Acknowledgements ⭐️
 
