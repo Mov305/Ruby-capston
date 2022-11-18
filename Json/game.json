@@ -1,0 +1,14 @@
+[
+  {
+    "id": 902,
+    "multiplayer": null,
+    "last_played_at": "0000-01-01 00:00:00 +0200",
+    "archived": false
+  },
+  {
+    "id": 454,
+    "multiplayer": true,
+    "last_played_at": "2000-05-05 00:00:00 +0200",
+    "archived": false
+  }
+]

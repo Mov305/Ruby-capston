@@ -1,0 +1,15 @@
+[
+  {
+    "id": 586,
+    "first_name": "dd",
+    "last_name": "d",
+    "items": [
+      {
+        "id": 454,
+        "multiplayer": true,
+        "last_played_at": "2000-05-05 00:00:00 +0200",
+        "archived": false
+      }
+    ]
+  }
+]
