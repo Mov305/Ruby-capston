@@ -1,29 +1,23 @@
 require_relative 'helper_spec'
 
 describe Game do
+  before :each do
+    @game = Game.new(true, Time.new(2001, 1, 1), 'id')
+  end
+
   it 'should be a game' do
-    game = Game.new('2006-06-03', 'Barbra', '2009-08-09', 'Barbie')
-    expect(game.class).to eq(Game)
+    expect(@game).to be_an_instance_of(Game)
   end
 
-  it 'should have a name' do
-    game = Game.new('2006-06-03', 'Barbra', '2009-08-09', 'Barbie')
-    expect(game.name).to eq('Barbie')
-  end
-
-  it ' should have a publish date' do
-    game = Game.new('2006-06-03', 'Barbra', '2009-08-09', 'Barbie')
-    expect(game.publish_date).to eq(Date.parse('2006-06-03'))
+  it 'should be multiplayer' do
+    expect(@game.multiplayer).to eq(true)
   end
 
   it 'should have a last_played_at date' do
-    game = Game.new('2006-06-03', 'Barbra', '2009-08-09', 'Barbie')
-    expect(game.last_played_at).to eq('2009-08-09')
+    expect(@game.last_played_at).to eq(Time.new(2001, 1, 1))
   end
 
-  it 'should be able to be archived' do
-    game = Game.new('2006-06-03', 'Barbra', '2009-08-09', 'Barbie')
-    game.move_to_archive
-    expect(game.archived).to eq(true)
+  it "shouldn't be archived" do
+    expect(@game.archived).to eq(false)
   end
 end

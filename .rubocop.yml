@@ -9,9 +9,9 @@ AllCops:
   DisplayCopNames: true
 
 Layout/LineLength:
-  Max: 120
+  Max: 200
 Metrics/MethodLength:
-  Max: 60
+  Max: 65
 Metrics/AbcSize:
   Max: 50
 Metrics/ClassLength:
@@ -19,6 +19,8 @@ Metrics/ClassLength:
 Metrics/BlockLength:
   IgnoredMethods: ['describe']
   Max: 30
+Metrics/AbcSize:
+  Max: 80
 
 Style/Documentation:
   Enabled: false
@@ -61,6 +63,11 @@ Metrics/CyclomaticComplexity:
   Enabled: false
   Max: 8
 
+Metrics/PerceivedComplexity:
+  Description: A complexity metric geared towards measuring complexity for a human reader.
+  Enabled: false
+  Max: 25
+
 Lint/NestedMethodDefinition:
   Description: Do not use nested method definitions.
   Enabled: false
@@ -71,4 +78,10 @@ Style/OptionalArguments:
 
 # DISABLE CRLF for windows systems
 Layout/EndOfLine:
-  EnforcedStyle: lf
+  Enabled: false
+
+Naming/VariableName:
+  Enabled: false
+
+Naming/FileName:
+  Enabled: false

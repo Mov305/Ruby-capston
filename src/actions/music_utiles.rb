@@ -33,7 +33,7 @@ class MusicUtiles
   def create_genre
     print 'Enter the title of the genre :'
     title = gets.chomp
-    genre = Genre.new(title)
+    Genre.new(title)
   end
 
   def select_genre

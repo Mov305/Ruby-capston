@@ -18,7 +18,9 @@ class Game < Item
   end
 
   def can_be_archieved?
-    duration = Date.today.year - @last_played_at.year
+    duration = Time.now.year - @last_played_at.year
     super && duration > 2
   end
+
+  attr_accessor :multiplayer, :last_played_at
 end

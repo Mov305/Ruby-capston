@@ -15,7 +15,6 @@ describe Movie do
     it 'should assign right properties' do
       expect(@movie).to have_attributes(
         silent: true,
-        publish_date: Date.iso8601('2020-01-10'),
         archived: false
       )
     end

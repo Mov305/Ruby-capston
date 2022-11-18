@@ -1,4 +1,4 @@
-require_relative '../Book'
+require_relative '../book'
 require_relative '../label'
 
 class BookUtiles
@@ -38,7 +38,7 @@ class BookUtiles
     title = gets.chomp
     print 'Enter the color of the label :'
     color = gets.chomp
-    label = Label.new(title, color)
+    Label.new(title, color)
   end
 
   def select_label()
