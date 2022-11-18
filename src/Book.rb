@@ -24,10 +24,3 @@ class Book < Item
 
   attr_accessor :publisher, :cover_state, :id
 end
-
-# newItem = Book.new("Publisher", Time.new(2001, 1, 1), "not bad")
-# puts newItem.can_be_archived?
-# p newItem.map_item
-# lab = Label.new("Title", "red")
-# lab.add_item(newItem)
-# p lab.inspect

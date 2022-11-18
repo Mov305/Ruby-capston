@@ -1,5 +1,5 @@
 require 'json'
-require_relative 'book'
+require_relative 'Book'
 require_relative 'label'
 require_relative 'genre'
 require_relative 'music_album'
@@ -122,29 +122,21 @@ class Store
   end
 
   def save_data
-    File.write('Json/book.json', JSON.pretty_generate(@books.map(&:map_item)))
-    File.write('Json/label.json', JSON.pretty_generate(@labels.map(&:map_item)))
-    File.write('Json/music.json', JSON.pretty_generate(@musics.map(&:map_item)))
-    File.write('Json/genre.json', JSON.pretty_generate(@genres.map(&:map_item)))
-    File.write('Json/movie.json', JSON.pretty_generate(@movies.map(&:map_item)))
-    File.write('Json/source.json', JSON.pretty_generate(@sources.map(&:map_item)))
-    File.write('Json/game.json', JSON.pretty_generate(@games.map(&:map_item)))
-    File.write('Json/author.json', JSON.pretty_generate(@authors.map(&:map_item)))
+    # if Json folder doesn't exist, create it
+    FileUtils.mkdir_p('Json')
+    # rubocop:disable Style/GuardClause
+    if Dir.exist?('Json')
+      # rubocop:enable Style/GuardClause
+      File.write('Json/book.json', JSON.pretty_generate(@books.map(&:map_item)))
+      File.write('Json/label.json', JSON.pretty_generate(@labels.map(&:map_item)))
+      File.write('Json/music.json', JSON.pretty_generate(@musics.map(&:map_item)))
+      File.write('Json/genre.json', JSON.pretty_generate(@genres.map(&:map_item)))
+      File.write('Json/movie.json', JSON.pretty_generate(@movies.map(&:map_item)))
+      File.write('Json/source.json', JSON.pretty_generate(@sources.map(&:map_item)))
+      File.write('Json/game.json', JSON.pretty_generate(@games.map(&:map_item)))
+      File.write('Json/author.json', JSON.pretty_generate(@authors.map(&:map_item)))
+    end
   end
 
   attr_reader :books, :labels, :musics, :genres, :movies, :sources, :games, :authors
 end
-
-# newItem = Book.new("Publisher", Time.new(2001, 1, 1), "not bad")
-# store = Store.new
-# store.add_book(newItem)
-# store.save_data
-
-# p store.books
-
-# lab = Label.new("Title", "red")
-# lab.add_item(newItem)
-# store.add_label(lab)
-
-# p store.get_books
-# p store.get_labels

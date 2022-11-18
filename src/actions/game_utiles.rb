@@ -8,7 +8,7 @@ class GameUtiles
 
   def add_game
     print 'Multiplayer: '
-    multiplayer = gets.chomp
+    multiplayer = gets.chomp.downcase == 'y'
     print 'Last played at: '
     last_played_at = gets.chomp.split('-').map(&:to_i)
     game = Game.new(multiplayer, Time.new(last_played_at[0], last_played_at[1], last_played_at[2]))

@@ -19,6 +19,6 @@ class Author
 
   def add_item(item)
     @items << item unless @items.include?(item)
-    item.author = self
+    item.author = "#{first_name} #{last_name}"
   end
 end

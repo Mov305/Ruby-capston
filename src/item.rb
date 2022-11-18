@@ -27,9 +27,3 @@ class Item
   attr_accessor :id, :genre, :author, :source, :label, :archived
   attr_reader :publish_date
 end
-
-# newItem = Item.new(Time.new(2021, 1, 1))
-# puts newItem.can_be_archived?
-# newItem.move_to_archive
-# newItem.author = "Author"
-# p newItem.inspect

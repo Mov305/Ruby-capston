@@ -26,7 +26,7 @@ class App
       end
     when 4
       @store.games.each do |game|
-        puts "Mutiplayer: #{game.mutiplayer}, Last Played At: #{game.last_played_at}, Author: #{game.author}"
+        puts "Mutiplayer: #{game.multiplayer}, Last Played At: #{game.last_played_at}, Author: #{game.author}"
       end
     else
       puts 'Invalid option'

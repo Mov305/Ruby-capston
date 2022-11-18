@@ -1,5 +1,5 @@
 require 'rspec'
-require './src/book'
+require './src/Book'
 require './src/label'
 require './src/music_album'
 require './src/movie'

@@ -9,7 +9,7 @@ class Source
 
   def add_item(item)
     @items << item
-    item.source = self
+    item.source = name
   end
 
   def map_item

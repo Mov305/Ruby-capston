@@ -10,7 +10,7 @@ class Genre
 
   def add_item(item)
     @items.push(item)
-    item.genre = self
+    item.genre = name
   end
 
   def map_item
