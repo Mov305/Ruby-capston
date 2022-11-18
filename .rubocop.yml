@@ -82,3 +82,6 @@ Layout/EndOfLine:
 
 Naming/VariableName:
   Enabled: false
+
+Naming/FileName:
+  Enabled: false
