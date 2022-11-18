@@ -33,7 +33,7 @@ class GameUtiles
     first_name = gets.chomp
     print 'Enter the author last name :'
     last_name = gets.chomp
-    author = Author.new(first_name, last_name)
+    Author.new(first_name, last_name)
   end
 
   def select_author

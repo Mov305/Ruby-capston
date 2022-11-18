@@ -31,7 +31,7 @@ class MovieUtiles
   def create_source
     print 'Enter the name of the source :'
     name = gets.chomp
-    source = Source.new(name)
+    Source.new(name)
   end
 
   def select_source

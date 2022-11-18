@@ -1,4 +1,5 @@
 class Item
+  # rubocop:disable Lint/UnusedMethodArgument
   def initialize(date, id = Random.rand(1000), archived: false)
     @publish_date = date
     @id = id
@@ -8,6 +9,7 @@ class Item
     @label = 'N/A'
     @archived = false
   end
+  # rubocop:enable Lint/UnusedMethodArgument
 
   def can_be_archived?
     # return true if the item is older than 10 years # should use a time object

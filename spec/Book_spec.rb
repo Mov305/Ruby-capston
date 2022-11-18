@@ -14,6 +14,6 @@ describe Book do
   end
 
   it 'The book should be able to be mapped' do
-    expect(@book.map_book).to be_a Hash
+    expect(@book.map_item).to be_a Hash
   end
 end

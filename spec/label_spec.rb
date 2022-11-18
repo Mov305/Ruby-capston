@@ -10,6 +10,6 @@ describe Label do
   end
 
   it 'The label should be able to be mapped' do
-    expect(@label.map_label).to be_a Hash
+    expect(@label.map_item).to be_a Hash
   end
 end
